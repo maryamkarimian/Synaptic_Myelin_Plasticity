@@ -21,20 +21,7 @@ for iCR = 1:numel(CRall)
     for iCE = 1:numel(CEall)
         CE = CEall(iCE);
         load([dir1,'LR',num2str(LR),'_LE',num2str(LE),'_CR',num2str(CR),'_CE',num2str(CE),'.mat']);
-%         fig2 = figure;
-        
-%         % Reordering--------------------------
-%         W = K2(:,:,1);
-%         [M,Q] = community_louvain(W,gamma);
-%         M0 = M;
-%         W = K2(:,:,end);
-%         [M,Q] = community_louvain(W,gamma,M0,'negative_asym');
-%         [On,Wr] = reorder_mod(W,M);
-%         loc = (iCR-1)*11 + iCE;
-%         subplot_tight(11,11,loc)
-%         imagesc(Wr);
-        %--------------------------------------
-%         loc = (iCR-1)*11 + iCE;
+
         loc = 11*11-( ( (iCR-1)*11 )+(11-iCE) );
         subplot(11,11,loc)
         imagesc(K2(:,:,end));
